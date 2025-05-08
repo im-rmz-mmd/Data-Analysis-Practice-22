@@ -22,28 +22,13 @@ Designed to highlight top-performing items, categories, and revenue trends.
 - Handled missing categories by filtering out blanks
 
 ### 2. DAX Measures
-- **Total Revenue:**  
-  ```DAX
-  Total Revenue = SUMX(order_details, RELATED(menu_items[price]))
-  ```
-
-- **Total Orders:**  
-  ```DAX
-  Total Orders = COUNT(order_details[order_id])
-  ```
-
-- **Top Item:**  
-  ```DAX
-  Top Item = 
-  CALCULATE(
-    VALUES(menu_items[item_name]),
-    TOPN(1, 
-      SUMMARIZE(order_details, menu_items[item_name], "Order Count", COUNT(order_details[order_id])), 
-      [Order Count], 
-      DESC
-    )
-  )
-  ```
+- **Total Revenue**  
+  
+- **Total Orders**  
+  
+- **Top Item**  
+  
+- **Order Count**
 
 ---
 
